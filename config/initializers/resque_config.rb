@@ -1,2 +1,4 @@
-config = ENV.fetch("RAILS_RESQUE_REDIS", "127.0.0.1:6379")
-Resque.redis = config
+config = YAML.load_file(Rails.root.to_s + '/config/resque.yml')[Rails.env]
+config = config.symbolize_keys! if config
+
+Resque.redis = config[:redis_url]

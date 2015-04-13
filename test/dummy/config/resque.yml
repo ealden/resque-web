@@ -1,0 +1,8 @@
+development:
+  redis_url: 127.0.0.1:6379
+
+test:
+  redis_url: 127.0.0.1:6379
+
+production:
+  redis_url: 127.0.0.1:6379
